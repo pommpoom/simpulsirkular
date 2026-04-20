@@ -73,9 +73,11 @@ export default function Dashboard() {
       <div className="mx-auto max-w-6xl space-y-8">
         <section className="relative rounded-[36px] border border-white/70 bg-[var(--surface)] px-6 py-8 shadow-[var(--shadow)] backdrop-blur md:px-10 md:py-12">
           <div className="absolute inset-x-0 top-0 h-28 rounded-t-[36px] bg-gradient-to-r from-emerald-100/70 via-transparent to-amber-100/70" />
+          <div className="floating-orb absolute right-0 top-10 h-28 w-28 rounded-full bg-emerald-200/30 blur-2xl" />
+          <div className="floating-orb-delayed absolute bottom-10 right-20 h-20 w-20 rounded-full bg-amber-200/30 blur-2xl" />
           <div className="relative grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-800">
+              <div className="pulse-ring inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-800">
                 <Leaf className="h-4 w-4" />
                 Ringkasan kontribusi SimpulSirkular
               </div>
@@ -92,7 +94,7 @@ export default function Dashboard() {
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
                   href="/lapor"
-                  className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-[var(--brand)] px-7 py-4 text-lg font-bold text-white transition hover:bg-[var(--brand-deep)]"
+                  className="button-glow group inline-flex items-center justify-center gap-3 rounded-2xl bg-[var(--brand)] px-7 py-4 text-lg font-bold text-white transition hover:bg-[var(--brand-deep)]"
                 >
                   <Recycle className="h-5 w-5" />
                   Lanjut setor limbah
@@ -100,7 +102,7 @@ export default function Dashboard() {
                 </Link>
                 <Link
                   href="/bursa"
-                  className="inline-flex items-center justify-center gap-3 rounded-2xl border border-[var(--line)] bg-white/80 px-7 py-4 text-lg font-bold text-[var(--brand-deep)] transition hover:bg-white"
+                  className="card-lift inline-flex items-center justify-center gap-3 rounded-2xl border border-[var(--line)] bg-white/80 px-7 py-4 text-lg font-bold text-[var(--brand-deep)] transition hover:bg-white"
                 >
                   <MapPin className="h-5 w-5" />
                   Cek bursa pakan
@@ -108,16 +110,16 @@ export default function Dashboard() {
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3 text-sm font-semibold text-[var(--muted)]">
-                <span className="rounded-full bg-white/80 px-4 py-2">Statistik 7 hari</span>
-                <span className="rounded-full bg-white/80 px-4 py-2">Rute pickup lebih jelas</span>
-                <span className="rounded-full bg-white/80 px-4 py-2">Terhubung ke semua halaman inti</span>
+                <span className="card-lift rounded-full bg-white/80 px-4 py-2">Statistik 7 hari</span>
+                <span className="card-lift rounded-full bg-white/80 px-4 py-2">Rute pickup lebih jelas</span>
+                <span className="card-lift rounded-full bg-white/80 px-4 py-2">Terhubung ke semua halaman inti</span>
               </div>
             </div>
 
             <div className="relative">
-              <div className="rounded-[30px] border border-[var(--line)] bg-[var(--surface-strong)] p-6 shadow-lg">
+              <div className="card-lift rounded-[30px] border border-[var(--line)] bg-[var(--surface-strong)] p-6 shadow-lg">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm sm:col-span-2">
+                  <article className="card-lift rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm sm:col-span-2">
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
@@ -134,7 +136,7 @@ export default function Dashboard() {
                     </p>
                   </article>
 
-                  <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+                  <article className="card-lift rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
                     <div className="inline-flex rounded-2xl bg-emerald-100 p-3 text-emerald-700">
                       <Clock3 className="h-5 w-5" />
                     </div>
@@ -142,7 +144,7 @@ export default function Dashboard() {
                     <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Pickup terselesaikan pekan ini</p>
                   </article>
 
-                  <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+                  <article className="card-lift rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
                     <div className="inline-flex rounded-2xl bg-sky-100 p-3 text-sky-700">
                       <ShieldCheck className="h-5 w-5" />
                     </div>
@@ -162,7 +164,7 @@ export default function Dashboard() {
             return (
               <article
                 key={card.label}
-                className="rounded-[28px] border border-white/70 bg-white/75 p-6 shadow-[var(--shadow)] backdrop-blur"
+                className="card-lift rounded-[28px] border border-white/70 bg-white/75 p-6 shadow-[var(--shadow)] backdrop-blur"
               >
                 <div className={`inline-flex rounded-2xl p-3 ${card.tone}`}>
                   <Icon className="h-5 w-5" />
@@ -176,7 +178,7 @@ export default function Dashboard() {
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="rounded-[32px] border border-white/70 bg-white/75 p-6 shadow-[var(--shadow)] backdrop-blur md:p-8">
+          <div className="card-lift rounded-[32px] border border-white/70 bg-white/75 p-6 shadow-[var(--shadow)] backdrop-blur md:p-8">
             <div className="flex items-center gap-3 text-[var(--brand-deep)]">
               <BarChart3 className="h-6 w-6" />
               <p className="text-sm font-bold uppercase tracking-[0.24em]">Aktivitas 7 hari</p>
@@ -203,14 +205,14 @@ export default function Dashboard() {
               </div>
               <Link
                 href="/"
-                className="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-bold text-[var(--brand-deep)] transition hover:bg-emerald-50"
+                className="button-glow inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-bold text-[var(--brand-deep)] transition hover:bg-emerald-50"
               >
                 Kembali ke beranda
               </Link>
             </div>
           </div>
 
-          <div className="rounded-[32px] border border-white/70 bg-[linear-gradient(135deg,rgba(47,122,79,0.09),rgba(255,255,255,0.82))] p-6 shadow-[var(--shadow)] md:p-8">
+          <div className="card-lift rounded-[32px] border border-white/70 bg-[linear-gradient(135deg,rgba(47,122,79,0.09),rgba(255,255,255,0.82))] p-6 shadow-[var(--shadow)] md:p-8">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-[var(--brand)]">Alur terhubung</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-[var(--brand-deep)]">
               Dashboard ini sekarang mengikuti ritme halaman utama
@@ -220,7 +222,7 @@ export default function Dashboard() {
                 const Icon = step.icon;
 
                 return (
-                  <article key={step.title} className="rounded-3xl bg-white p-5 shadow-sm">
+                  <article key={step.title} className="card-lift rounded-3xl bg-white p-5 shadow-sm">
                     <div className="flex items-start gap-4">
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--brand)] text-white">
                         <Icon className="h-5 w-5" />
@@ -241,7 +243,7 @@ export default function Dashboard() {
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <Link
                 href="/lapor"
-                className="rounded-3xl border border-[var(--line)] bg-white px-5 py-5 shadow-sm transition hover:-translate-y-0.5"
+                className="card-lift rounded-3xl border border-[var(--line)] bg-white px-5 py-5 shadow-sm transition hover:-translate-y-0.5"
               >
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--brand)]">Aksi utama</p>
                 <p className="mt-2 text-xl font-black text-[var(--brand-deep)]">Buat laporan baru</p>
@@ -251,7 +253,7 @@ export default function Dashboard() {
               </Link>
               <Link
                 href="/bursa"
-                className="rounded-3xl border border-[var(--line)] bg-white px-5 py-5 shadow-sm transition hover:-translate-y-0.5"
+                className="card-lift rounded-3xl border border-[var(--line)] bg-white px-5 py-5 shadow-sm transition hover:-translate-y-0.5"
               >
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--brand)]">Langkah berikutnya</p>
                 <p className="mt-2 text-xl font-black text-[var(--brand-deep)]">Lihat bursa pasok</p>
