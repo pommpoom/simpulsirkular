@@ -1,4 +1,5 @@
 import './globals.css'
+import IntroGate from '@/components/IntroGate'
 import Navbar from '@/components/Navbar'
 
 export const metadata = {
@@ -10,8 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id">
       <body className="min-h-screen text-gray-900 antialiased">
-        <Navbar />
-        <main>{children}</main>
+        <IntroGate>
+          <Navbar />
+          <main>{children}</main>
+        </IntroGate>
       </body>
     </html>
   )
