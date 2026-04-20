@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Leaf, Recycle } from 'lucide-react';
 
 const navLinks = [
+  { href: '/dashboard', label: 'Dashboard' },
   { href: '/lapor', label: 'Lapor Limbah' },
   { href: '/bursa', label: 'Bursa Pakan' },
 ];
